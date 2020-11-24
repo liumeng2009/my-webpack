@@ -1,0 +1,104 @@
+.news-list {
+    position: absolute;
+    padding: .16rem .08rem 0 .08rem;
+    overflow-y: auto;
+    z-index: 0;
+    .news-item{
+        position: relative;
+        width: 100%;
+        margin-bottom: .16rem;
+        padding-bottom: .2rem;
+
+        .info {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: .12rem;
+            color: #666;
+        }
+
+        h1 {
+            font-size: .15rem;
+            line-height: .2rem;
+            font-weight: normal;
+        }
+
+        .main {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .title {
+                margin-bottom: .08rem;
+            }
+
+            .img {
+                display: flex;
+                .pic {
+                    font-size: 0;
+                }
+            }
+            img {
+                width: 100%;
+                animation: opacityAnimate .5s linear;
+            }
+        }
+
+        &.type1 {
+            .main {
+                .title {
+                    width: 66.6%;
+                }
+                .pic {
+                    width: 33.3%;
+                } 
+            }
+        }
+
+        
+        &.type2 {
+            .main {
+                .title {
+                    width: 33.3%;
+                }
+                .img {
+                    width: 66.6%;
+                    .pic {
+                        width: 50%;
+                        margin-right: .08rem;
+                    }
+                    .pic:last-child {
+                        margin-right: 0;
+                    }
+                } 
+            }
+        }
+
+        &.type3 {
+            .main{
+                flex-direction: column;
+                .title {
+                    width: 100%;
+                }
+                .img {
+                    width: 100%;                    
+                    .pic {
+                        width: 33.3%;
+                        margin-right: .08rem;
+                    }
+                    .pic:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes opacityAnimate {
+    0% { opacity: 0;}
+    100% { opacity: 1; }
+}
